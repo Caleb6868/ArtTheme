@@ -12,14 +12,14 @@
     </string-array>
 
     <string-array name="descriptions">
-        <item>Adler Planetarium</item>
-        <item>Art Institute</item>
-        <item>Chinatown</item>
-        <item>Melenium Park</item>
-        <item>Navy Pier</item>
-        <item>Sears Tower</item>
-        <item>Shedd Aquarium</item>
-        <item>Wrigely Field</item>
+        <item>This is the Chicago Plantarium\nwith many space adventures</item>
+        <item>This is the Chicago Art Institute\nwhere beautiful work is displayed</item>
+        <item>Get a taste of China in the US\nin Chinatown Chicago</item>
+        <item>TBD</item>
+        <item>TBD</item>
+        <item>TBD</item>
+        <item>TBD</item>
+        <item>Home of The Chicago Cubs baseball\nteam</item>
     </string-array>
 
 </resources>

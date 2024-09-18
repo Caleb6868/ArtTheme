@@ -69,7 +69,7 @@ fun ArtThemeLayout() {
             fontSize = 30.sp
         )
         Text (
-            text = "This is the Chicago Art Institute\n where beautiful work is displayed"
+            text = "TBD"
         )
         Spacer(modifier = Modifier.size(40.dp))
         Row {
