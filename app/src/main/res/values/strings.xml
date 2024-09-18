@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">ArtTheme</string>
+    <string-array name="titles">
+        <item>Adler Planetarium</item>
+        <item>Art Institute</item>
+        <item>Chinatown</item>
+        <item>Melenium Park</item>
+        <item>Navy Pier</item>
+        <item>Sears Tower</item>
+        <item>Shedd Aquarium</item>
+        <item>Wrigely Field</item>
+    </string-array>
+
+    <string-array name="descriptions">
+        <item>Adler Planetarium</item>
+        <item>Art Institute</item>
+        <item>Chinatown</item>
+        <item>Melenium Park</item>
+        <item>Navy Pier</item>
+        <item>Sears Tower</item>
+        <item>Shedd Aquarium</item>
+        <item>Wrigely Field</item>
+    </string-array>
+
+</resources>
