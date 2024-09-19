@@ -24,6 +24,12 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.currentComposer
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateMapOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -48,46 +54,73 @@ override fun onCreate(savedInstanceState: Bundle?) {
 }
 
 
+
+
+
+
 @Composable
 fun ArtThemeLayout() {
-    val stringTitles: Array<String> =  stringArrayResource(R.array.titles)
+
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image(
-            modifier = Modifier
-                .height(200.dp)
-                .fillMaxWidth(),
-            painter = painterResource(id = R.drawable.art_institute),
-            contentDescription = null
-        )
-        Spacer(modifier = Modifier.size(30.dp))
-        Text(
-            text = stringTitles[1],
-            fontSize = 30.sp
-        )
-        Text (
-            text = "TBD"
-        )
+
+        ComposeTextAndImage(1)
+
         Spacer(modifier = Modifier.size(40.dp))
+
         Row {
-            Button(
-                onClick = { /*TODO*/ },
-            ) {
 
-            }
-            Spacer(modifier = Modifier.size(100.dp))
-            Button(
-                onClick = { /*TODO*/ },
-            ) {
-
-            }
+            ComposeButton()
         }
+    }
+}
+
+@Composable
+fun ComposeButton() {
+    var state by remember { mutableStateOf(0) }
+    Button(
+
+        onClick = { if (state > 0) {
+            state--
+        } },
+    ) {
 
 
     }
+    Spacer(modifier = Modifier.size(100.dp))
+    Button(
+        onClick = { if (state < 6) {
+            state++
+            ComposeTextAndImage(currentStep = state)
+        } },
+    ) {
+
+
+    }
+}
+
+@Composable
+fun ComposeTextAndImage(currentStep: Int) {
+    val stringTitles: Array<String> =  stringArrayResource(R.array.titles)
+    val stringDesc: Array<String> =  stringArrayResource(R.array.descriptions)
+    Image(
+        modifier = Modifier
+            .height(200.dp)
+            .fillMaxWidth(),
+        painter = painterResource(id = R.drawable.art_institute),
+        contentDescription = null
+    )
+    Spacer(modifier = Modifier.size(30.dp))
+    Text(
+        text = stringTitles[currentStep],
+        fontSize = 30.sp
+    )
+    Text (
+        text = stringDesc[currentStep]
+    )
 }
 
 
